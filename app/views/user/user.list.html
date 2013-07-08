@@ -1,0 +1,6 @@
+
+<ul>
+    <li ng-repeat="user in users">
+        <a href="#/user/{{ user.id }}/details">{{ user.name }}</a> {{ user.twitter | twitterHandle }}
+    </li>
+</ul>

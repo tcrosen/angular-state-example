@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title ng-bind="$state.current.title"></title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body ng-controller="AppController">
+    <header>
+        <ul class="menu">
+            <li ng-class="{ active: $state.is('user') }"><a href="#/user">Users</a></li>
+            <li ng-class="{ active: $state.is('about') }"><a href="#/about">About</a></li>
+        </ul>
+    </header>
+
+    <section ui-view>
+    </section>
+
+    <hr>
+
+    <footer ng:include src="'partials/footer.html'">
+    </footer>
+
+    <!-- In production use:
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    -->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-ui/ui-router.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services/common/version-service.js"></script>
+    <script src="js/services/user/user-service.js"></script>
+    <script src="js/controllers/app-controller.js"></script>
+    <script src="js/controllers/about/about-controller.js"></script>
+    <script src="js/controllers/user/user-controller.js"></script>
+    <script src="js/controllers/user/user-list-controller.js"></script>
+    <script src="js/controllers/user/user-details-controller.js"></script>
+    <script src="js/controllers/user/user-search-controller.js"></script>
+    <script src="js/filters/interpolate.js"></script>
+    <script src="js/filters/twitterHandle.js"></script>
+    <script src="js/directives/app-version.js"></script>
+</body>
+</html>
